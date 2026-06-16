@@ -290,6 +290,13 @@ body {
     color: var(--text-muted);
 }
 
+.project-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: auto;
+}
+
 .project-link {
     display: inline-flex;
     align-items: center;
@@ -297,8 +304,6 @@ body {
     gap: 10px;
     width: 100%;
     padding: 14px 24px;
-    background: var(--accent-gradient);
-    color: #fff;
     text-decoration: none;
     border-radius: var(--radius-sm);
     font-weight: 600;
@@ -308,17 +313,43 @@ body {
     overflow: hidden;
 }
 
-.project-link::after {
+.project-link-external {
+    background: var(--accent-gradient);
+    color: #fff;
+}
+
+.project-link-external::after {
     content: '→';
     transition: transform 0.3s ease;
 }
 
-.project-link:hover {
+.project-link-external:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(124, 92, 255, 0.4);
 }
 
-.project-link:hover::after {
+.project-link-external:hover::after {
+    transform: translateX(4px);
+}
+
+.project-link-detail {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.project-link-detail::after {
+    content: '→';
+    transition: transform 0.3s ease;
+}
+
+.project-link-detail:hover {
+    background: var(--surface-hover);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+}
+
+.project-link-detail:hover::after {
     transform: translateX(4px);
 }
 

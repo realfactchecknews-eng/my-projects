@@ -4,7 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const count = document.getElementById('project-count');
 
     initParticles();
-    loadProjects();
+
+    if (grid && count) {
+        loadProjects();
+    }
 
     async function loadProjects() {
         try {
@@ -19,11 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
             hideLoader();
         } catch (error) {
             console.error('Ошибка загрузки проектов:', error);
-            grid.innerHTML = `
-                <div class="error-message">
-                    <p>Не удалось загрузить проекты. Проверь файл <code>projects.json</code>.</p>
-                </div>
-            `;
+            if (grid) {
+                grid.innerHTML = `
+                    <div class="error-message">
+                        <p>Не удалось загрузить проекты. Проверь файл <code>projects.json</code>.</p>
+                    </div>
+                `;
+            }
             hideLoader();
         }
     }
@@ -39,14 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="project-tags">
                     ${project.tags.map(tag => `<span class="project-tag">${escapeHtml(tag)}</span>`).join('')}
                 </div>
-                <a class="project-link" href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer">
-                    Перейти на сайт
-                </a>
+                <div class="project-card-actions">
+                    <a class="project-link project-link-detail" href="project.html?id=${escapeHtml(project.id)}">
+                        Подробнее
+                    </a>
+                    <a class="project-link project-link-external" href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer">
+                        ${escapeHtml(project.linkText || 'Перейти')}
+                    </a>
+                </div>
             </article>
         `).join('');
     }
 
     function hideLoader() {
+        if (!loader) return;
         loader.classList.add('hidden');
         setTimeout(() => {
             loader.style.display = 'none';
