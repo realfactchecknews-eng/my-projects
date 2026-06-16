@@ -1,0 +1,18 @@
+[
+    {
+        "id": "burmalda-tycoon",
+        "title": "Burmalda Tycoon",
+        "icon": "🎰",
+        "description": "Бесплатная развлекательная казино-игра с слотами, рулеткой, блекджеком и крашем. Виртуальная валюта, уровни, достижения и престиж. Для взрослой аудитории 18+.",
+        "url": "https://realfactchecknews-eng.github.io/burmalda_tycoon/",
+        "tags": ["Игра", "JavaScript", "GitHub Pages", "Казино"]
+    },
+    {
+        "id": "hse-law-prep",
+        "title": "HSE Law Prep",
+        "icon": "⚖️",
+        "description": "Платформа для подготовки к олимпиадам по праву. Темы, тесты, прогресс и разборы для Высшей пробы и перечня олимпиад ВШЭ.",
+        "url": "https://realfactchecknews-eng.github.io/hse-law-prep/",
+        "tags": ["Образование", "Право", "Олимпиады", "GitHub Pages"]
+    }
+]
