@@ -2,8 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader');
     const grid = document.getElementById('projects-grid');
     const count = document.getElementById('project-count');
+    const subtitle = document.getElementById('hero-subtitle');
+    const nav = document.querySelector('.nav');
 
     initParticles();
+    initNav();
+    initReveal();
+
+    if (subtitle) {
+        typeText(subtitle, 'Создаю сайты, ботов и цифровые эксперименты.', 60);
+    }
 
     if (grid && count) {
         loadProjects();
@@ -15,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) throw new Error('Не удалось загрузить проекты');
             const projects = await response.json();
 
-            // Имитация красивой загрузки (минимум 1200 мс)
-            await new Promise(resolve => setTimeout(resolve, 1200));
+            // Имитация загрузки — минимум 2.2 секунды чтобы лоадер успел поиграть
+            await new Promise(resolve => setTimeout(resolve, 2200));
 
             renderProjects(projects);
             hideLoader();
@@ -61,7 +69,57 @@ document.addEventListener('DOMContentLoaded', () => {
         loader.classList.add('hidden');
         setTimeout(() => {
             loader.style.display = 'none';
-        }, 600);
+        }, 800);
+    }
+
+    function typeText(element, text, speed) {
+        let i = 0;
+        element.innerHTML = '<span class="cursor"></span>';
+        const cursor = element.querySelector('.cursor');
+
+        function type() {
+            if (i < text.length) {
+                cursor.insertAdjacentText('beforebegin', text.charAt(i));
+                i++;
+                setTimeout(type, speed);
+            } else {
+                setTimeout(() => {
+                    cursor.style.display = 'none';
+                }, 2000);
+            }
+        }
+
+        setTimeout(type, 1000);
+    }
+
+    function initNav() {
+        if (!nav) return;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    }
+
+    function initReveal() {
+        const reveals = document.querySelectorAll('.reveal');
+        if (reveals.length === 0) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        reveals.forEach(reveal => observer.observe(reveal));
     }
 
     function escapeHtml(text) {
@@ -73,10 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initParticles() {
         const canvas = document.getElementById('particles');
+        if (!canvas) return;
         const ctx = canvas.getContext('2d');
         let particles = [];
         let animationId;
         let isActive = true;
+        let mouse = { x: null, y: null };
 
         function resize() {
             canvas.width = window.innerWidth;
@@ -84,16 +144,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function createParticles() {
-            const count = Math.min(window.innerWidth / 10, 80);
+            const count = Math.min(window.innerWidth / 12, 70);
             particles = [];
             for (let i = 0; i < count; i++) {
                 particles.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
-                    vx: (Math.random() - 0.5) * 0.4,
-                    vy: (Math.random() - 0.5) * 0.4,
-                    radius: Math.random() * 2 + 1,
-                    alpha: Math.random() * 0.5 + 0.2
+                    vx: (Math.random() - 0.5) * 0.3,
+                    vy: (Math.random() - 0.5) * 0.3,
+                    radius: Math.random() * 2 + 0.5,
+                    alpha: Math.random() * 0.5 + 0.1,
+                    color: Math.random() > 0.5 ? '139, 92, 246' : '6, 182, 212'
                 });
             }
         }
@@ -109,9 +170,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
                 if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
 
+                // Отталкивание от мыши
+                if (mouse.x && mouse.y) {
+                    const dx = p.x - mouse.x;
+                    const dy = p.y - mouse.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 120) {
+                        const force = (120 - dist) / 120;
+                        p.x += dx * force * 0.02;
+                        p.y += dy * force * 0.02;
+                    }
+                }
+
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(124, 92, 255, ${p.alpha})`;
+                ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
                 ctx.fill();
 
                 // Соединяем близкие частицы
@@ -121,9 +194,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const dy = p.y - p2.y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
 
-                    if (dist < 120) {
+                    if (dist < 130) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(124, 92, 255, ${0.15 * (1 - dist / 120)})`;
+                        ctx.strokeStyle = `rgba(${p.color}, ${0.12 * (1 - dist / 130)})`;
                         ctx.lineWidth = 0.5;
                         ctx.moveTo(p.x, p.y);
                         ctx.lineTo(p2.x, p2.y);
@@ -144,7 +217,16 @@ document.addEventListener('DOMContentLoaded', () => {
             createParticles();
         });
 
-        // Пауза анимации при скрытой вкладке для экономии ресурсов
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        window.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {
                 isActive = false;

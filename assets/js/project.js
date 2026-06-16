@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const projectId = params.get('id');
             const project = projects.find(p => p.id === projectId);
 
-            // Имитация загрузки
-            await new Promise(resolve => setTimeout(resolve, 800));
+            // Имитация загрузки — лоадер успевает поиграть
+            await new Promise(resolve => setTimeout(resolve, 1600));
 
             if (!project) {
                 renderNotFound();
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderProject(project) {
-        document.title = `${project.title} | Мои проекты`;
+        document.title = `${project.title} | Матвей Юр`;
 
         // Hero
         hero.innerHTML = `
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // CTA
         const linkText = project.linkText || 'Перейти';
         ctaContainer.innerHTML = `
-            <h2 class="project-cta-title">Хочешь посмотреть?</h2>
+            <h2 class="project-cta-title">Хочешь посмотреть вживую?</h2>
             <a class="project-cta-button" href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer">
                 ${escapeHtml(linkText)}
             </a>
@@ -113,8 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderNotFound() {
+        document.title = 'Не найдено | Матвей Юр';
         hero.innerHTML = `
             <div class="not-found">
+                <div class="project-hero-icon">🤷</div>
                 <h2>Проект не найден</h2>
                 <p>Такого проекта пока нет в портфолио.</p>
                 <a href="index.html" class="project-cta-button">← Вернуться к проектам</a>
@@ -126,8 +128,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderError() {
+        document.title = 'Ошибка | Матвей Юр';
         hero.innerHTML = `
             <div class="not-found">
+                <div class="project-hero-icon">⚠️</div>
                 <h2>Ошибка загрузки</h2>
                 <p>Не удалось загрузить данные проекта. Попробуй позже.</p>
                 <a href="index.html" class="project-cta-button">← Вернуться к проектам</a>
@@ -137,7 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function formatContent(text) {
         if (!text) return '';
-        // Разбиваем на параграфы по двойным переносам
         const paragraphs = text.split('\n\n').map(p => p.trim()).filter(p => p);
         return paragraphs.map(p => `<p>${escapeHtml(p).replace(/\n/g, '<br>')}</p>`).join('');
     }
@@ -150,9 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function hideLoader() {
+        if (!loader) return;
         loader.classList.add('hidden');
         setTimeout(() => {
             loader.style.display = 'none';
-        }, 600);
+        }, 800);
     }
 });
