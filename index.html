@@ -143,39 +143,57 @@
             <div class="car-road"></div>
             <div class="car-scene">
                 <div class="car-wrapper">
-                    <svg class="car-body" viewBox="0 0 160 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <ellipse cx="80" cy="63" rx="68" ry="4" fill="rgba(0,0,0,0.4)"/>
-                        <path d="M12 55 L12 37 Q12 31 18 30 L48 29 L62 15 L120 14 L140 28 L157 30 Q162 31 162 37 L162 54 Q162 59 157 59 L144 59 A17 17 0 0 1 110 59 L58 59 A17 17 0 0 1 24 59 L18 59 Q12 59 12 55 Z" fill="#f8f8fb"/>
-                        <path d="M12 55 L12 37 Q12 31 18 30 L48 29 L62 15 L120 14 L140 28 L157 30 Q162 31 162 37 L162 54 Q162 59 157 59 L144 59 A17 17 0 0 1 110 59 L58 59 A17 17 0 0 1 24 59 L18 59 Q12 59 12 55 Z" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
+                    <svg class="car-body" viewBox="0 0 140 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- road perspective -->
+                        <path d="M55 120 L65 85 L75 85 L85 120 Z" fill="#374151" opacity="0.3"/>
+
+                        <!-- left mirror -->
+                        <path d="M8 52 L2 44 L12 42 L16 50 Z" fill="#f8f8fb"/>
+                        <rect x="2" y="42" width="12" height="10" rx="2" fill="#e5e7eb" opacity="0.5"/>
+
+                        <!-- right mirror -->
+                        <path d="M132 52 L138 44 L128 42 L124 50 Z" fill="#f8f8fb"/>
+                        <rect x="126" y="42" width="12" height="10" rx="2" fill="#e5e7eb" opacity="0.5"/>
+
+                        <!-- body -->
+                        <path d="M20 55 L25 25 Q30 12 70 12 Q110 12 115 25 L120 55 Q122 70 115 78 L105 78 A15 15 0 0 1 75 78 L65 78 A15 15 0 0 1 35 78 L25 78 Q18 70 20 55 Z" fill="#f8f8fb"/>
+                        <path d="M20 55 L25 25 Q30 12 70 12 Q110 12 115 25 L120 55 Q122 70 115 78 L105 78 A15 15 0 0 1 75 78 L65 78 A15 15 0 0 1 35 78 L25 78 Q18 70 20 55 Z" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
 
                         <!-- windshield -->
-                        <path d="M120 15 L138 28 L118 28 L102 16 Z" fill="#1e1b4b"/>
-                        <text x="108" y="25" font-family="Inter, sans-serif" font-size="5" font-weight="800" fill="#f8f8fb" letter-spacing="0.1">#СЕЛА-ДАЛА</text>
+                        <path d="M35 52 L40 28 Q45 18 70 18 Q95 18 100 28 L105 52 Q107 62 100 65 L40 65 Q33 62 35 52 Z" fill="#1e1b4b"/>
+                        <path d="M35 52 L40 28 Q45 18 70 18 Q95 18 100 28 L105 52 Q107 62 100 65 L40 65 Q33 62 35 52 Z" stroke="#312e81" stroke-width="1.5" fill="none"/>
 
-                        <!-- side window -->
-                        <path d="M64 18 L118 17 L135 28 L66 28 Z" fill="#111827"/>
-                        <path d="M50 30 L60 19 L60 28 Z" fill="#111827"/>
+                        <!-- text on windshield -->
+                        <text x="50" y="46" font-family="Inter, sans-serif" font-size="8" font-weight="800" fill="#f8f8fb" letter-spacing="0.3">#СЕЛА-ДАЛА</text>
 
-                        <line x1="68" y1="28" x2="68" y2="56" stroke="#e5e7eb" stroke-width="1.5"/>
-                        <rect x="72" y="38" width="11" height="2.5" rx="1" fill="#9ca3af"/>
-                        <ellipse cx="160" cy="39" rx="2" ry="5" fill="#fef08a"/>
-                        <ellipse cx="14" cy="39" rx="1.5" ry="4" fill="#dc2626"/>
+                        <!-- hood line -->
+                        <path d="M25 75 Q70 82 115 75" stroke="#e5e7eb" stroke-width="1.5" fill="none"/>
 
+                        <!-- headlights -->
+                        <ellipse cx="38" cy="68" rx="10" ry="5" fill="#fef08a" opacity="0.9"/>
+                        <ellipse cx="102" cy="68" rx="10" ry="5" fill="#fef08a" opacity="0.9"/>
+                        <ellipse cx="38" cy="68" rx="5" ry="2.5" fill="#fff"/>
+                        <ellipse cx="102" cy="68" rx="5" ry="2.5" fill="#fff"/>
+
+                        <!-- grille -->
+                        <rect x="60" y="72" width="20" height="5" rx="2" fill="#374151"/>
+
+                        <!-- wheels -->
                         <g class="wheel">
-                            <animateTransform attributeName="transform" type="rotate" from="0 46 59" to="360 46 59" dur="0.5s" repeatCount="indefinite"/>
-                            <circle cx="46" cy="59" r="14" fill="#111827"/>
-                            <circle cx="46" cy="59" r="9" fill="#e5e7eb"/>
-                            <circle cx="46" cy="59" r="4" fill="#374151"/>
-                            <line x1="46" y1="45" x2="46" y2="73" stroke="#6b7280" stroke-width="2"/>
-                            <line x1="32" y1="59" x2="60" y2="59" stroke="#6b7280" stroke-width="2"/>
+                            <animateTransform attributeName="transform" type="rotate" from="0 30 90" to="360 30 90" dur="0.5s" repeatCount="indefinite"/>
+                            <circle cx="30" cy="90" r="13" fill="#111827"/>
+                            <circle cx="30" cy="90" r="8" fill="#e5e7eb"/>
+                            <circle cx="30" cy="90" r="3" fill="#374151"/>
+                            <line x1="30" y1="77" x2="30" y2="103" stroke="#6b7280" stroke-width="2"/>
+                            <line x1="17" y1="90" x2="43" y2="90" stroke="#6b7280" stroke-width="2"/>
                         </g>
                         <g class="wheel">
-                            <animateTransform attributeName="transform" type="rotate" from="0 127 59" to="360 127 59" dur="0.5s" repeatCount="indefinite"/>
-                            <circle cx="127" cy="59" r="14" fill="#111827"/>
-                            <circle cx="127" cy="59" r="9" fill="#e5e7eb"/>
-                            <circle cx="127" cy="59" r="4" fill="#374151"/>
-                            <line x1="127" y1="45" x2="127" y2="73" stroke="#6b7280" stroke-width="2"/>
-                            <line x1="113" y1="59" x2="141" y2="59" stroke="#6b7280" stroke-width="2"/>
+                            <animateTransform attributeName="transform" type="rotate" from="0 110 90" to="360 110 90" dur="0.5s" repeatCount="indefinite"/>
+                            <circle cx="110" cy="90" r="13" fill="#111827"/>
+                            <circle cx="110" cy="90" r="8" fill="#e5e7eb"/>
+                            <circle cx="110" cy="90" r="3" fill="#374151"/>
+                            <line x1="110" y1="77" x2="110" y2="103" stroke="#6b7280" stroke-width="2"/>
+                            <line x1="97" y1="90" x2="123" y2="90" stroke="#6b7280" stroke-width="2"/>
                         </g>
                     </svg>
                 </div>

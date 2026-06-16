@@ -908,23 +908,25 @@ section {
 
 .car-road {
     position: absolute;
-    bottom: 35px;
-    left: 0;
-    right: 0;
-    height: 3px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 100%;
     background: repeating-linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.25) 0,
-        rgba(255, 255, 255, 0.25) 30px,
-        transparent 30px,
-        transparent 60px
+        180deg,
+        rgba(255, 255, 255, 0.35) 0,
+        rgba(255, 255, 255, 0.35) 25px,
+        transparent 25px,
+        transparent 50px
     );
-    animation: roadMove 1s linear infinite;
+    clip-path: polygon(35% 100%, 65% 100%, 55% 0, 45% 0);
+    animation: roadMove 0.6s linear infinite;
 }
 
 @keyframes roadMove {
     from { background-position: 0 0; }
-    to { background-position: -60px 0; }
+    to { background-position: 0 50px; }
 }
 
 .car-scene {
@@ -936,18 +938,21 @@ section {
 .car-wrapper {
     position: absolute;
     bottom: 12px;
-    left: 0;
-    width: 140px;
-    transform: translateX(-100%);
-    animation: carDrive 12s linear infinite;
+    left: 50%;
+    width: 160px;
+    transform: translateX(-50%);
+    animation: carIdle 2s ease-in-out infinite;
 }
 
-@keyframes carDrive {
-    0% {
-        transform: translateX(-100%);
+@keyframes carIdle {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
     }
-    100% {
-        transform: translateX(calc(100vw + 100%));
+    25% {
+        transform: translateX(-50%) translateY(-2px);
+    }
+    75% {
+        transform: translateX(-50%) translateY(-1px);
     }
 }
 
@@ -955,7 +960,7 @@ section {
     width: 100%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.4));
 }
 
 /* Reveal animation */
@@ -1063,10 +1068,14 @@ section {
     }
 
     .car-wrapper {
-        width: 110px;
+        width: 130px;
     }
 
     .car-scene {
-        height: 90px;
+        height: 120px;
+    }
+
+    .car-road {
+        width: 110px;
     }
 }
