@@ -560,6 +560,22 @@ section {
     margin-bottom: 20px;
 }
 
+.about-link {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.4);
+    transition: var(--transition);
+}
+
+.about-link:hover {
+    border-bottom-color: var(--accent-2);
+}
+
 .about-tags {
     display: flex;
     flex-wrap: wrap;
