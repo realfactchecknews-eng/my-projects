@@ -319,25 +319,43 @@ body {
     justify-content: center;
     align-items: center;
     animation: fadeUp 0.8s ease-out 0.5s both;
+    perspective: 1000px;
+    transform-style: preserve-3d;
 }
 
 .hero-image-frame {
     position: relative;
-    padding: 6px;
+    padding: 0;
     border-radius: 32px;
-    background: var(--accent-gradient);
-    box-shadow: 0 20px 80px rgba(139, 92, 246, 0.3);
+    background: transparent;
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease-out;
+    will-change: transform;
 }
 
 .hero-image-frame::before {
     content: '';
     position: absolute;
-    inset: -10px;
+    inset: -20px;
     border-radius: 40px;
     background: var(--accent-gradient);
-    filter: blur(30px);
+    filter: blur(40px);
     z-index: -1;
-    opacity: 0.4;
+    opacity: 0.35;
+    transform: translateZ(-50px);
+}
+
+.hero-image-frame::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 10%;
+    right: 10%;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.6) 0%, transparent 70%);
+    transform: translateZ(-60px) rotateX(60deg);
+    z-index: -2;
 }
 
 .hero-image {
@@ -347,8 +365,9 @@ body {
     height: auto;
     max-height: 65vh;
     object-fit: cover;
-    border-radius: 26px;
-    background: var(--bg);
+    border-radius: 32px;
+    transform: translateZ(30px);
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
 }
 
 .hero-badge {

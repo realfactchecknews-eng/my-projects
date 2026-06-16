@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParticles();
     initNav();
     initReveal();
+    initHero3D();
 
     if (subtitle) {
         typeText(subtitle, 'Делаю сайты, ботов и игры.', 60);
@@ -236,5 +237,56 @@ document.addEventListener('DOMContentLoaded', () => {
                 draw();
             }
         });
+    }
+
+    function initHero3D() {
+        const frame = document.getElementById('hero-image-frame');
+        if (!frame) return;
+
+        const wrap = frame.parentElement;
+        let rafId = null;
+        let targetRotateX = 0;
+        let targetRotateY = 0;
+        let currentRotateX = 0;
+        let currentRotateY = 0;
+
+        function animate() {
+            currentRotateX += (targetRotateX - currentRotateX) * 0.1;
+            currentRotateY += (targetRotateY - currentRotateY) * 0.1;
+
+            frame.style.transform = `rotateX(${currentRotateX}deg) rotateY(${currentRotateY}deg)`;
+
+            rafId = requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        wrap.addEventListener('mousemove', (e) => {
+            const rect = wrap.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            targetRotateY = ((x - centerX) / centerX) * 12;
+            targetRotateX = -((y - centerY) / centerY) * 12;
+        });
+
+        wrap.addEventListener('mouseleave', () => {
+            targetRotateX = 0;
+            targetRotateY = 0;
+        });
+
+        // Плавное покачивание на мобилках
+        if (window.matchMedia('(pointer: coarse)').matches) {
+            let time = 0;
+            const floatAnimate = () => {
+                time += 0.02;
+                targetRotateY = Math.sin(time) * 5;
+                targetRotateX = Math.cos(time * 0.7) * 3;
+                requestAnimationFrame(floatAnimate);
+            };
+            floatAnimate();
+        }
     }
 });
