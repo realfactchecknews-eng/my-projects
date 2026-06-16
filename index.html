@@ -143,58 +143,52 @@
             <div class="car-road"></div>
             <div class="car-scene">
                 <div class="car-wrapper">
-                    <svg class="car-body" viewBox="0 0 140 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="car-body" viewBox="0 0 180 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <!-- road perspective -->
-                        <path d="M55 120 L65 85 L75 85 L85 120 Z" fill="#374151" opacity="0.3"/>
-
-                        <!-- left mirror -->
-                        <path d="M8 52 L2 44 L12 42 L16 50 Z" fill="#f8f8fb"/>
-                        <rect x="2" y="42" width="12" height="10" rx="2" fill="#e5e7eb" opacity="0.5"/>
-
-                        <!-- right mirror -->
-                        <path d="M132 52 L138 44 L128 42 L124 50 Z" fill="#f8f8fb"/>
-                        <rect x="126" y="42" width="12" height="10" rx="2" fill="#e5e7eb" opacity="0.5"/>
-
-                        <!-- body -->
-                        <path d="M20 55 L25 25 Q30 12 70 12 Q110 12 115 25 L120 55 Q122 70 115 78 L105 78 A15 15 0 0 1 75 78 L65 78 A15 15 0 0 1 35 78 L25 78 Q18 70 20 55 Z" fill="#f8f8fb"/>
-                        <path d="M20 55 L25 25 Q30 12 70 12 Q110 12 115 25 L120 55 Q122 70 115 78 L105 78 A15 15 0 0 1 75 78 L65 78 A15 15 0 0 1 35 78 L25 78 Q18 70 20 55 Z" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
-
-                        <!-- windshield -->
-                        <path d="M35 52 L40 28 Q45 18 70 18 Q95 18 100 28 L105 52 Q107 62 100 65 L40 65 Q33 62 35 52 Z" fill="#1e1b4b"/>
-                        <path d="M35 52 L40 28 Q45 18 70 18 Q95 18 100 28 L105 52 Q107 62 100 65 L40 65 Q33 62 35 52 Z" stroke="#312e81" stroke-width="1.5" fill="none"/>
-
-                        <!-- text on windshield -->
-                        <text x="50" y="46" font-family="Inter, sans-serif" font-size="8" font-weight="800" fill="#f8f8fb" letter-spacing="0.3">#СЕЛА-ДАЛА</text>
-
-                        <!-- hood line -->
-                        <path d="M25 75 Q70 82 115 75" stroke="#e5e7eb" stroke-width="1.5" fill="none"/>
-
-                        <!-- headlights -->
-                        <ellipse cx="38" cy="68" rx="10" ry="5" fill="#fef08a" opacity="0.9"/>
-                        <ellipse cx="102" cy="68" rx="10" ry="5" fill="#fef08a" opacity="0.9"/>
-                        <ellipse cx="38" cy="68" rx="5" ry="2.5" fill="#fff"/>
-                        <ellipse cx="102" cy="68" rx="5" ry="2.5" fill="#fff"/>
-
-                        <!-- grille -->
-                        <rect x="60" y="72" width="20" height="5" rx="2" fill="#374151"/>
+                        <path d="M70 110 L82 80 L98 80 L110 110 Z" fill="#374151" opacity="0.25"/>
 
                         <!-- wheels -->
-                        <g class="wheel">
-                            <animateTransform attributeName="transform" type="rotate" from="0 30 90" to="360 30 90" dur="0.5s" repeatCount="indefinite"/>
-                            <circle cx="30" cy="90" r="13" fill="#111827"/>
-                            <circle cx="30" cy="90" r="8" fill="#e5e7eb"/>
-                            <circle cx="30" cy="90" r="3" fill="#374151"/>
-                            <line x1="30" y1="77" x2="30" y2="103" stroke="#6b7280" stroke-width="2"/>
-                            <line x1="17" y1="90" x2="43" y2="90" stroke="#6b7280" stroke-width="2"/>
-                        </g>
-                        <g class="wheel">
-                            <animateTransform attributeName="transform" type="rotate" from="0 110 90" to="360 110 90" dur="0.5s" repeatCount="indefinite"/>
-                            <circle cx="110" cy="90" r="13" fill="#111827"/>
-                            <circle cx="110" cy="90" r="8" fill="#e5e7eb"/>
-                            <circle cx="110" cy="90" r="3" fill="#374151"/>
-                            <line x1="110" y1="77" x2="110" y2="103" stroke="#6b7280" stroke-width="2"/>
-                            <line x1="97" y1="90" x2="123" y2="90" stroke="#6b7280" stroke-width="2"/>
-                        </g>
+                        <ellipse cx="32" cy="92" rx="16" ry="10" fill="#111827"/>
+                        <ellipse cx="148" cy="92" rx="16" ry="10" fill="#111827"/>
+                        <ellipse cx="32" cy="92" rx="10" ry="6" fill="#374151"/>
+                        <ellipse cx="148" cy="92" rx="10" ry="6" fill="#374151"/>
+
+                        <!-- left mirror -->
+                        <path d="M10 45 L4 38 L16 36 L20 42 Z" fill="#f8f8fb"/>
+                        <rect x="4" y="36" width="14" height="10" rx="2" fill="#e5e7eb" opacity="0.5"/>
+
+                        <!-- right mirror -->
+                        <path d="M170 45 L176 38 L164 36 L160 42 Z" fill="#f8f8fb"/>
+                        <rect x="162" y="36" width="14" height="10" rx="2" fill="#e5e7eb" opacity="0.5"/>
+
+                        <!-- body -->
+                        <path d="M25 70 L28 38 Q32 20 90 20 Q148 20 152 38 L155 70 Q158 85 150 90 L130 90 A18 18 0 0 1 94 90 L86 90 A18 18 0 0 1 50 90 L30 90 Q22 85 25 70 Z" fill="#f8f8fb"/>
+                        <path d="M25 70 L28 38 Q32 20 90 20 Q148 20 152 38 L155 70 Q158 85 150 90 L130 90 A18 18 0 0 1 94 90 L86 90 A18 18 0 0 1 50 90 L30 90 Q22 85 25 70 Z" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
+
+                        <!-- windshield -->
+                        <path d="M45 60 L48 38 Q52 28 90 28 Q128 28 132 38 L135 60 Q137 68 130 70 L50 70 Q43 68 45 60 Z" fill="#1e1b4b"/>
+                        <path d="M45 60 L48 38 Q52 28 90 28 Q128 28 132 38 L135 60 Q137 68 130 70 L50 70 Q43 68 45 60 Z" stroke="#312e81" stroke-width="1.5" fill="none"/>
+
+                        <!-- text on windshield -->
+                        <text x="60" y="52" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#f8f8fb" letter-spacing="0.3">#СЕЛА-ДАЛА</text>
+
+                        <!-- hood -->
+                        <path d="M30 78 Q90 84 150 78" stroke="#e5e7eb" stroke-width="1.5" fill="none"/>
+
+                        <!-- headlights -->
+                        <rect x="38" y="72" width="22" height="10" rx="5" fill="#fef08a" opacity="0.9"/>
+                        <rect x="120" y="72" width="22" height="10" rx="5" fill="#fef08a" opacity="0.9"/>
+                        <rect x="44" y="74" width="10" height="6" rx="3" fill="#fff"/>
+                        <rect x="126" y="74" width="10" height="6" rx="3" fill="#fff"/>
+
+                        <!-- grille -->
+                        <rect x="75" y="78" width="30" height="8" rx="3" fill="#374151"/>
+                        <line x1="80" y1="78" x2="80" y2="86" stroke="#4b5563" stroke-width="1"/>
+                        <line x1="90" y1="78" x2="90" y2="86" stroke="#4b5563" stroke-width="1"/>
+                        <line x1="100" y1="78" x2="100" y2="86" stroke="#4b5563" stroke-width="1"/>
+
+                        <!-- bumper -->
+                        <rect x="35" y="86" width="110" height="6" rx="3" fill="#d1d5db"/>
                     </svg>
                 </div>
             </div>

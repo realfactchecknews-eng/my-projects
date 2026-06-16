@@ -939,7 +939,7 @@ section {
     position: absolute;
     bottom: 12px;
     left: 50%;
-    width: 160px;
+    width: 130px;
     transform: translateX(-50%);
     animation: carIdle 2s ease-in-out infinite;
 }
@@ -1068,14 +1068,14 @@ section {
     }
 
     .car-wrapper {
-        width: 130px;
+        width: 100px;
     }
 
     .car-scene {
-        height: 120px;
+        height: 100px;
     }
 
     .car-road {
-        width: 110px;
+        width: 90px;
     }
 }
