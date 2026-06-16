@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initReveal();
 
     if (subtitle) {
-        typeText(subtitle, 'Создаю сайты, ботов и цифровые эксперименты.', 60);
+        typeText(subtitle, 'Делаю сайты, ботов и игры.', 60);
     }
 
     if (grid && count) {
