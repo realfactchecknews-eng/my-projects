@@ -138,6 +138,80 @@
             </div>
         </section>
 
+        <!-- VAZ 2102 Car Animation -->
+        <section class="car-section reveal">
+            <div class="car-road"></div>
+            <div class="car-scene">
+                <div class="car-wrapper">
+                    <svg class="car-body" viewBox="0 0 300 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Car shadow -->
+                        <ellipse cx="150" cy="108" rx="120" ry="8" fill="rgba(0,0,0,0.4)"/>
+
+                        <!-- Exhaust smoke -->
+                        <circle cx="18" cy="88" r="4" fill="rgba(255,255,255,0.2)" class="smoke smoke-1"/>
+                        <circle cx="10" cy="86" r="6" fill="rgba(255,255,255,0.15)" class="smoke smoke-2"/>
+                        <circle cx="2" cy="84" r="8" fill="rgba(255,255,255,0.1)" class="smoke smoke-3"/>
+
+                        <!-- Car body -->
+                        <path d="M30 85 L30 55 Q30 45 40 43 L90 40 L110 20 L210 18 L240 40 L270 42 Q280 44 280 55 L280 80 Q280 88 270 88 L250 88 A28 28 0 0 1 194 88 L106 88 A28 28 0 0 1 50 88 L40 88 Q30 88 30 85 Z" fill="#b91c1c"/>
+                        <path d="M30 85 L30 55 Q30 45 40 43 L90 40 L110 20 L210 18 L240 40 L270 42 Q280 44 280 55 L280 80 Q280 88 270 88 L250 88 A28 28 0 0 1 194 88 L106 88 A28 28 0 0 1 50 88 L40 88 Q30 88 30 85 Z" fill="url(#carGrad)" opacity="0.6"/>
+
+                        <!-- Windows -->
+                        <path d="M115 24 L205 22 L232 40 L118 40 Z" fill="#1e1b4b"/>
+                        <path d="M120 27 L200 25 L222 38 L122 38 Z" fill="#312e81" opacity="0.5"/>
+                        <path d="M95 42 L112 24 L112 40 Z" fill="#1e1b4b"/>
+
+                        <!-- Door line -->
+                        <line x1="118" y1="40" x2="118" y2="85" stroke="#7f1d1d" stroke-width="2"/>
+                        <line x1="118" y1="55" x2="140" y2="55" stroke="#7f1d1d" stroke-width="2"/>
+
+                        <!-- Door handle -->
+                        <rect x="125" y="58" width="18" height="4" rx="2" fill="#d1d5db"/>
+
+                        <!-- Text on door -->
+                        <text x="148" y="72" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="#f8f8fb" letter-spacing="0.5">#СЕЛА-ДАЛА</text>
+
+                        <!-- Headlight -->
+                        <ellipse cx="278" cy="60" rx="4" ry="10" fill="#fef08a"/>
+                        <ellipse cx="279" cy="60" rx="2" ry="6" fill="#fff"/>
+
+                        <!-- Taillight -->
+                        <ellipse cx="32" cy="60" rx="3" ry="9" fill="#dc2626"/>
+
+                        <!-- Bumper -->
+                        <rect x="25" y="80" width="8" height="8" rx="2" fill="#9ca3af"/>
+                        <rect x="270" y="80" width="8" height="8" rx="2" fill="#9ca3af"/>
+
+                        <!-- Wheel arches -->
+                        <path d="M50 88 A28 28 0 0 1 106 88" stroke="#7f1d1d" stroke-width="3" fill="none"/>
+                        <path d="M194 88 A28 28 0 0 1 250 88" stroke="#7f1d1d" stroke-width="3" fill="none"/>
+
+                        <!-- Wheels -->
+                        <g class="wheel wheel-front">
+                            <circle cx="78" cy="88" r="22" fill="#111827"/>
+                            <circle cx="78" cy="88" r="14" fill="#d1d5db"/>
+                            <circle cx="78" cy="88" r="6" fill="#374151"/>
+                            <line x1="78" y1="66" x2="78" y2="110" stroke="#6b7280" stroke-width="3"/>
+                            <line x1="56" y1="88" x2="100" y2="88" stroke="#6b7280" stroke-width="3"/>
+                        </g>
+                        <g class="wheel wheel-rear">
+                            <circle cx="222" cy="88" r="22" fill="#111827"/>
+                            <circle cx="222" cy="88" r="14" fill="#d1d5db"/>
+                            <circle cx="222" cy="88" r="6" fill="#374151"/>
+                            <line x1="222" y1="66" x2="222" y2="110" stroke="#6b7280" stroke-width="3"/>
+                            <line x1="200" y1="88" x2="244" y2="88" stroke="#6b7280" stroke-width="3"/>
+                        </g>
+
+                        <defs>
+                            <linearGradient id="carGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3"/>
+                                <stop offset="100%" style="stop-color:#000000;stop-opacity:0.2"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="assets/js/main.js"></script>
