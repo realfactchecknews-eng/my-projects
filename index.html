@@ -142,10 +142,22 @@
         <section class="court-section reveal">
             <div class="court-scene">
                 <div class="court-gavel">
-                    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="55" y="10" width="10" height="70" rx="3" fill="#8b5cf6" class="gavel-handle"/>
-                        <rect x="35" y="15" width="50" height="22" rx="4" fill="#a78bfa" class="gavel-head"/>
-                        <rect x="25" y="72" width="70" height="8" rx="2" fill="#f43f5e" class="gavel-base"/>
+                    <svg viewBox="0 0 140 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="handleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#5b21b6"/>
+                                <stop offset="50%" style="stop-color:#8b5cf6"/>
+                                <stop offset="100%" style="stop-color:#5b21b6"/>
+                            </linearGradient>
+                            <linearGradient id="headGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#c4b5fd"/>
+                                <stop offset="100%" style="stop-color:#7c3aed"/>
+                            </linearGradient>
+                        </defs>
+                        <rect x="60" y="45" width="20" height="90" rx="6" fill="url(#handleGrad)"/>
+                        <rect x="20" y="15" width="100" height="42" rx="12" fill="url(#headGrad)"/>
+                        <ellipse cx="70" cy="15" rx="50" ry="9" fill="#ddd6fe" opacity="0.5"/>
+                        <rect x="15" y="130" width="110" height="20" rx="8" fill="#f43f5e"/>
                     </svg>
                 </div>
                 <div class="court-bang">BANG</div>
@@ -157,13 +169,13 @@
                         </svg>
                     </div>
                     <div class="court-cage">
-                        <svg viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="5" y="5" width="90" height="120" rx="4" stroke="#f43f5e" stroke-width="3"/>
-                            <line x1="25" y1="5" x2="25" y2="125" stroke="#f43f5e" stroke-width="2"/>
-                            <line x1="50" y1="5" x2="50" y2="125" stroke="#f43f5e" stroke-width="2"/>
-                            <line x1="75" y1="5" x2="75" y2="125" stroke="#f43f5e" stroke-width="2"/>
-                            <line x1="5" y1="35" x2="95" y2="35" stroke="#f43f5e" stroke-width="2"/>
-                            <line x1="5" y1="75" x2="95" y2="75" stroke="#f43f5e" stroke-width="2"/>
+                        <svg viewBox="0 0 110 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="5" width="100" height="130" rx="6" stroke="#f43f5e" stroke-width="3"/>
+                            <line x1="28" y1="5" x2="28" y2="135" stroke="#f43f5e" stroke-width="2"/>
+                            <line x1="55" y1="5" x2="55" y2="135" stroke="#f43f5e" stroke-width="2"/>
+                            <line x1="82" y1="5" x2="82" y2="135" stroke="#f43f5e" stroke-width="2"/>
+                            <line x1="5" y1="38" x2="105" y2="38" stroke="#f43f5e" stroke-width="2"/>
+                            <line x1="5" y1="82" x2="105" y2="82" stroke="#f43f5e" stroke-width="2"/>
                         </svg>
                     </div>
                 </div>
