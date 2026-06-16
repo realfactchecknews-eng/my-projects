@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHero3D();
 
     if (subtitle) {
-        typeText(subtitle, 'Делаю сайты, ботов и игры.', 60);
+        typeText(subtitle, 'stay woork goon hard', 60);
     }
 
     if (grid && count) {
