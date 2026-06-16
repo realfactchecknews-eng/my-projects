@@ -937,8 +937,7 @@ section {
     position: absolute;
     bottom: 12px;
     left: 0;
-    width: 180px;
-    height: 80px;
+    width: 140px;
     transform: translateX(-100%);
     animation: carDrive 12s linear infinite;
 }
@@ -953,39 +952,10 @@ section {
 }
 
 .car-body {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
-}
-
-.car-wheel {
-    position: absolute;
-    bottom: 4px;
-    width: 36px;
-    height: 36px;
-    animation: wheelSpin 0.5s linear infinite;
-}
-
-.car-wheel-front {
-    left: 32px;
-}
-
-.car-wheel-rear {
-    right: 28px;
-}
-
-.car-wheel svg {
-    width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
-}
-
-@keyframes wheelSpin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(-360deg); }
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
 }
 
 /* Reveal animation */
@@ -1093,24 +1063,10 @@ section {
     }
 
     .car-wrapper {
-        width: 140px;
-        height: 62px;
+        width: 110px;
     }
 
     .car-scene {
         height: 90px;
-    }
-
-    .car-wheel {
-        width: 28px;
-        height: 28px;
-    }
-
-    .car-wheel-front {
-        left: 25px;
-    }
-
-    .car-wheel-rear {
-        right: 22px;
     }
 }
